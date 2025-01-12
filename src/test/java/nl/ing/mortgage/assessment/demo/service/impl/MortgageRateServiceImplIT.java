@@ -39,11 +39,6 @@ class MortgageRateServiceImplIT {
         mortgageRate = MortgageRate.builder().interestRate(INTEREST_RATE).lastUpdate(LAST_UPDATE).maturityPeriod(MATURITY_PERIOD).build();
     }
 
-    @AfterEach
-    public void cleanup() {
-        mortgageRateRepository.deleteAll();
-    }
-
     @Test
     @Transactional
     void save() {
