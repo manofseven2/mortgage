@@ -111,3 +111,8 @@ curl http://localhost:8080/management/health
 curl http://localhost:8080/management/caches
 ```
 
+# Detailed documentation
+
+## Find Microsoft word file here:
+
+# **[Mortgage.docx](src/main/docs/Mortgage.docx)**
