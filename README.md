@@ -21,6 +21,7 @@ Running tests
 ```shell
 ./mvnw veryfy
 ```
+
 ## Docker
 
 ### Building docker image:

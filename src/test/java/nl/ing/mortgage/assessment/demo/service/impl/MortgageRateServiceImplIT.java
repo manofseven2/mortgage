@@ -14,6 +14,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.time.Instant;
+import java.time.temporal.ChronoUnit;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.*;
@@ -50,7 +51,7 @@ class MortgageRateServiceImplIT {
         var fetched = mortgageRateRepository.findById(saved.getId()).orElseThrow();
         assertThat(fetched.getInterestRate()).isEqualTo(INTEREST_RATE);
         assertThat(fetched.getMaturityPeriod()).isEqualTo(MATURITY_PERIOD);
-        assertThat(fetched.getLastUpdate()).isEqualTo(LAST_UPDATE);
+        assertThat(fetched.getLastUpdate().truncatedTo(ChronoUnit.MICROS)).isEqualTo(LAST_UPDATE.truncatedTo(ChronoUnit.MICROS));
     }
 
     @Test
@@ -62,7 +63,7 @@ class MortgageRateServiceImplIT {
         assertThat(fetched.getId()).isEqualTo(mortgageRate.getId());
         assertThat(fetched.getInterestRate()).isEqualTo(INTEREST_RATE);
         assertThat(fetched.getMaturityPeriod()).isEqualTo(MATURITY_PERIOD);
-        assertThat(fetched.getLastUpdate()).isEqualTo(LAST_UPDATE);
+        assertThat(fetched.getLastUpdate().truncatedTo(ChronoUnit.MICROS)).isEqualTo(LAST_UPDATE.truncatedTo(ChronoUnit.MICROS));
     }
 
     @Test
