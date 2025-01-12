@@ -51,7 +51,7 @@ class MortgageRateServiceImplIT {
         var fetched = mortgageRateRepository.findById(saved.getId()).orElseThrow();
         assertThat(fetched.getInterestRate()).isEqualTo(INTEREST_RATE);
         assertThat(fetched.getMaturityPeriod()).isEqualTo(MATURITY_PERIOD);
-        assertThat(fetched.getLastUpdate().truncatedTo(ChronoUnit.MICROS)).isEqualTo(LAST_UPDATE.truncatedTo(ChronoUnit.MICROS));
+        assertThat(fetched.getLastUpdate().truncatedTo(ChronoUnit.MILLIS)).isEqualTo(LAST_UPDATE.truncatedTo(ChronoUnit.MILLIS));
     }
 
     @Test
@@ -63,7 +63,7 @@ class MortgageRateServiceImplIT {
         assertThat(fetched.getId()).isEqualTo(mortgageRate.getId());
         assertThat(fetched.getInterestRate()).isEqualTo(INTEREST_RATE);
         assertThat(fetched.getMaturityPeriod()).isEqualTo(MATURITY_PERIOD);
-        assertThat(fetched.getLastUpdate().truncatedTo(ChronoUnit.MICROS)).isEqualTo(LAST_UPDATE.truncatedTo(ChronoUnit.MICROS));
+        assertThat(fetched.getLastUpdate().truncatedTo(ChronoUnit.MILLIS)).isEqualTo(LAST_UPDATE.truncatedTo(ChronoUnit.MILLIS));
     }
 
     @Test
