@@ -6,3 +6,7 @@ logging:
 spring:
   liquibase:
     contexts: prod
+  cache:
+    type: caffeine
+    caffeine:
+      spec: maximumSize=1000,expireAfterWrite=30m

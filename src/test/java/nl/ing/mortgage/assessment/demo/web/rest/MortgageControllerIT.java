@@ -28,7 +28,6 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 @IntegrationTest
 @AutoConfigureMockMvc
-@ActiveProfiles(value = {"local"})
 class MortgageControllerIT {
     private static final String INTEREST_CHECK_API_URL = "/api/v1/mortgage-check";
     private static final String CURRENT_RATES_API_URL = "/api/v1/interest-rates";

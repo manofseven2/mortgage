@@ -17,7 +17,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/v1")
@@ -29,15 +28,9 @@ public class MortgageController {
     private final MortgageServiceFacade mortgageServiceFacade;
     private static final String HEADER_X_TOTAL_COUNT = "X-Total-Count";
 
-    @GetMapping("")
-    public ResponseEntity<List<MortgageRate>> getAllRates(@ParameterObject Pageable pageable) {
-        Page<MortgageRate> page = mortgageRateService.findAll(pageable);
-        HttpHeaders headers = generatePaginationHttpHeaders(page);
-        return ResponseEntity.ok().headers(headers).body(page.getContent());
-    }
-
     @GetMapping("/interest-rates")
     public ResponseEntity<List<MortgageRate>> getAllCurrentRates(@ParameterObject Pageable pageable) {
+        LOG.debug("request for interest rates.");
         Page<MortgageRate> page = mortgageRateService.findAllCurrentMortgageRates(pageable);
         HttpHeaders headers = generatePaginationHttpHeaders(page);
         return ResponseEntity.ok().headers(headers).body(page.getContent());

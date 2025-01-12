@@ -29,8 +29,8 @@ public class SecurityConfiguration {
                 authz
                     .requestMatchers(mvc.pattern("/api/admin/**")).hasAuthority(ADMIN)
                     .requestMatchers(mvc.pattern("/api/**")).permitAll()
-                    .requestMatchers(mvc.pattern("/error")).permitAll()
-                    .requestMatchers(mvc.pattern("/v3/api-docs/**")).permitAll()
+                    .requestMatchers(mvc.pattern("/**")).permitAll()
+                    .requestMatchers(mvc.pattern("/v3/api-docs")).permitAll()
                     .requestMatchers(mvc.pattern("/management/**")).permitAll()
             )
             .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS));
