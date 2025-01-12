@@ -12,11 +12,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import java.time.Instant;
 import java.util.HashMap;
-import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
-import static org.mockito.Mockito.when;
 
 @IntegrationTest
 class MortgageServiceFacadeImplIT {

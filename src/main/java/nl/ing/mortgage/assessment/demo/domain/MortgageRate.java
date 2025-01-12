@@ -10,7 +10,6 @@ import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
 
 import java.io.Serializable;
-import java.math.BigDecimal;
 import java.time.Instant;
 
 /**

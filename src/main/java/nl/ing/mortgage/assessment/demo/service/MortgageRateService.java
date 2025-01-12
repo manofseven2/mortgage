@@ -1,12 +1,9 @@
 package nl.ing.mortgage.assessment.demo.service;
 
 import nl.ing.mortgage.assessment.demo.domain.MortgageRate;
-import nl.ing.mortgage.assessment.demo.service.dto.MortgageCheckDto;
-import nl.ing.mortgage.assessment.demo.service.dto.MortgageCheckResponseDto;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
-import java.util.List;
 import java.util.Optional;
 
 /**

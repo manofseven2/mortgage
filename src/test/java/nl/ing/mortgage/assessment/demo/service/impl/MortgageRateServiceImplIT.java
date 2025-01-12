@@ -5,7 +5,6 @@ import nl.ing.mortgage.assessment.demo.IntegrationTest;
 import nl.ing.mortgage.assessment.demo.domain.MortgageRate;
 import nl.ing.mortgage.assessment.demo.repository.MortgageRateRepository;
 import nl.ing.mortgage.assessment.demo.service.MortgageRateService;
-import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;

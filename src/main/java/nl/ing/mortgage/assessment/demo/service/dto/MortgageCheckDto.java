@@ -9,6 +9,14 @@ import nl.ing.mortgage.assessment.demo.service.validation.MortgageAmountConstrai
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * This DTO is used to send required information to check
+ * @param income
+ * @param maturityPeriod
+ * @param loanValue
+ * @param homeValue
+ * @param additionalProperties
+ */
 @IncomeConstraint
 @MortgageAmountConstraint
 public record MortgageCheckDto(@Min(0) Double income, @Min(1) Integer maturityPeriod, Double loanValue,

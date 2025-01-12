@@ -22,6 +22,21 @@ Running tests
 ./mvnw veryfy
 ```
 
+## Running App
+
+Running the app in dev profile with test data
+
+```shell
+./mvnw spring-boot:run 
+```
+
+Running the app with prod profile without test data
+
+```shell
+./mvnw spring-boot:run -Dspring.profiles.active=prod
+```
+as injecting data was not in the scope of the assessment, you can not see any results when you run the project with this profile.
+
 ## Docker
 
 ### Building docker image:
@@ -75,3 +90,24 @@ curl --location --request POST 'http://localhost:8080/api/v1/mortgage-check' \
 
 }'
 ```
+
+## Monitoring API
+
+### Management endpoints:
+
+```shell
+curl http://localhost:8080/management
+```
+
+### Health endpoint:
+
+```shell
+curl http://localhost:8080/management/health
+```
+
+### Cache management endpoint:
+
+```shell
+curl http://localhost:8080/management/caches
+```
+

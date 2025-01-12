@@ -11,6 +11,9 @@ import org.springframework.stereotype.Service;
 import static nl.ing.mortgage.assessment.demo.exception.BusinessExceptionMessages.MORTGAGE_DATA_COULD_NOT_BE_FOUND;
 import static nl.ing.mortgage.assessment.demo.util.Utility.calculateMonthlyCost;
 
+/**
+ * Orchestrate various services to offer a high level business value
+ */
 @Service
 @AllArgsConstructor
 public class MortgageServiceFacadeImpl implements MortgageServiceFacade {

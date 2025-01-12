@@ -43,7 +43,7 @@ public class MortgageController {
         return ResponseEntity.ok(mortgageServiceFacade.calculate(dto));
     }
 
-    public HttpHeaders generatePaginationHttpHeaders(Page<MortgageRate> page) {
+    private HttpHeaders generatePaginationHttpHeaders(Page<MortgageRate> page) {
         HttpHeaders headers = new HttpHeaders();
         headers.add(HEADER_X_TOTAL_COUNT, Long.toString(page.getTotalElements()));
         return headers;

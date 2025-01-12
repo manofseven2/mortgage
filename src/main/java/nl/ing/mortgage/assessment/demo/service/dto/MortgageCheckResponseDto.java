@@ -1,6 +1,9 @@
 package nl.ing.mortgage.assessment.demo.service.dto;
 
-import java.math.BigDecimal;
-
+/**
+ * Response entity when all criteria are meet
+ * @param feasible
+ * @param monthlyCost
+ */
 public record MortgageCheckResponseDto(boolean feasible, Double monthlyCost) {
 }
