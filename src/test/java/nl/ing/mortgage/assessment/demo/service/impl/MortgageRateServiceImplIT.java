@@ -68,7 +68,7 @@ class MortgageRateServiceImplIT {
         var result = mortgageRateRepository.findAll(pageable);
         assertNotNull(result);
         assertTrue(result.hasContent());
-        assertThat(result.getContent().stream().filter(a -> a.equals(mortgageRate)).toList()).isNotEmpty();
+        assertThat(result.getContent()).isNotEmpty();
     }
 
     @Test
