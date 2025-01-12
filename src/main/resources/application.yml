@@ -1,0 +1,41 @@
+server:
+  port: 8080
+spring:
+  jackson:
+    serialization:
+      WRITE_DATES_AS_TIMESTAMPS: false
+    deserialization:
+      READ_DATE_TIMESTAMPS_AS_NANOSECONDS: true
+  application:
+    name: Mortgage Rate Demo App
+  liquibase:
+    change-log: classpath:/db/master.xml
+  threads:
+    virtual:
+      enabled: true #virtual threads are enabled
+management:
+  endpoints:
+    web:
+      base-path: /management
+      exposure:
+        include:
+          - configprops
+          - env
+          - health
+          - info
+          - logfile
+          - loggers
+          - prometheus
+          - threaddump
+          - caches
+          - liquibase
+  endpoint:
+    health:
+      show-details: always
+      probes:
+        enabled: true
+      group:
+        liveness:
+          include: livenessState
+        readiness:
+          include: readinessState,db

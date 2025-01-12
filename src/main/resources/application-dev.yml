@@ -1,0 +1,17 @@
+logging:
+  level:
+    ROOT: DEBUG
+    nl.ing.mortgage.assessment: DEBUG
+#    org.springframework.security: DEBUG
+    org.hibernate.SQL: DEBUG
+    org.hibernate.type.descriptor.sql.BasicBinder: TRACE
+    org.springframework.cache: TRACE
+
+spring:
+  liquibase:
+    contexts: dev, faker
+  cache:
+    type: caffeine
+    caffeine:
+      spec: maximumSize=1000,expireAfterWrite=30m
+

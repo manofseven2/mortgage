@@ -1,0 +1,5 @@
+services:
+  portal:
+    image: assignment/demo-app:latest
+    ports:
+      - 8080:8080

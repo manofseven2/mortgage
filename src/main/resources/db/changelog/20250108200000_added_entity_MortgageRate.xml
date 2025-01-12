@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+
+    <!--
+        Added the entity MortgageRate.
+    -->
+    <changeSet id="20250108200000-1" author="amir">
+        <createTable tableName="mortgage_rate">
+            <column name="id" type="bigint" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="maturity_period" type="integer">
+                <constraints nullable="false" />
+            </column>
+            <column name="interest_rate" type="double">
+                <constraints nullable="false" />
+            </column>
+            <column name="last_update" type="${datetimeType}">
+                <constraints nullable="false" />
+            </column>
+        </createTable>
+        <dropDefaultValue tableName="mortgage_rate" columnName="last_update" columnDataType="${datetimeType}"/>
+    </changeSet>
+
+    <changeSet id="20250108200000-2" author="amir">
+        <createIndex tableName="mortgage_rate" indexName="mortgage_rate_maturity_period_last_modified" unique="false">
+            <column name="maturity_period"/>
+            <column name="last_update"/>
+        </createIndex>
+    </changeSet>
+
+    <changeSet id="20250108182541-1-data" author="amir" context="faker">
+        <loadData
+                  file="db/fake-data/mortgage_rate.csv"
+                  separator=";"
+                  tableName="mortgage_rate"
+                  usePreparedStatements="true">
+            <column name="maturity_period" type="numeric"/>
+            <column name="interest_rate" type="numeric"/>
+            <column name="last_update" type="date"/>
+        </loadData>
+    </changeSet>
+</databaseChangeLog>

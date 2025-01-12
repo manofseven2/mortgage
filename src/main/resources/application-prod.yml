@@ -1,0 +1,8 @@
+logging:
+  level:
+    ROOT: INFO
+    nl.ing.mortgage.assessment: INFO
+
+spring:
+  liquibase:
+    contexts: prod
