@@ -19,7 +19,7 @@ mvn clean install -DskipTests
 Running tests
 
 ```shell
-./mvnw veryfy
+./mvnw verify
 ```
 
 ## Running App
